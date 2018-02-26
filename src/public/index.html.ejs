@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' gap://ready file://* *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    
+    <!-- This file is the template for "www/index.html". Modify it to fit your needs -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+
+
+    <!-- The following EJS lines include the necessary CSS and JS
+    from Monaca (cordova.js/ loader.js) in production mode -->
+    <% for (var dep in htmlWebpackPlugin.options.externalJS) { %>
+    <script type="text/javascript" src="<%= htmlWebpackPlugin.options.externalJS[dep] %>"></script>
+    <% } %>
+    <% for (var dep in htmlWebpackPlugin.options.externalCSS) { %>
+    <link rel="stylesheet" type="text/css" href="<%= htmlWebpackPlugin.options.externalCSS[dep] %>">
+    <% } %>
+
+    <style type="text/css">
+        .page__background {
+            background-image: url(imgs/bg.png) !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            /*text-align: center !important;*/
+        }
+
+        .list__item__center {
+            border-bottom: none;
+            -webkit-background-size: 100% 1px;
+            background-size: 100% 1px;
+            background-repeat: no-repeat;
+            background-position: bottom;
+            background-image: -webkit-linear-gradient(90deg, #ccc, #ccc 50%, transparent 50%);
+            background-image: -moz-linear-gradient(90deg, #ccc, #ccc 50%, transparent 50%);
+            background-image: -o-linear-gradient(90deg, #ccc, #ccc 50%, transparent 50%);
+            background-image: linear-gradient(0deg, #ccc, #ccc 50%, transparent 50%);
+        }
+        /*.percentage*/
+        /*{*/
+            /*min-width: 200px;*/
+        /*}*/
+
+        .top_choice
+        {
+            color: white;
+            background-color: forestgreen;
+        }
+        .second_choice
+        {
+            color: white;
+            background-color: darkgreen;
+        }
+        .third_choice
+        {
+            color: white;
+            background-color: seagreen;
+        }
+
+        .result_row
+        {
+            font-weight: bold;
+            font-size: 30pt;
+        }
+
+        .list__item__center {
+            min-height: 44px;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-flex: 1;
+            -webkit-flex-grow: 1;
+            -moz-box-flex: 1;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: row;
+            -moz-box-orient: horizontal;
+            -moz-box-direction: normal;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            -webkit-box-ordinal-group: 2;
+            -webkit-order: 1;
+            -moz-box-ordinal-group: 2;
+            -ms-flex-order: 1;
+            order: 1;
+            margin-right: auto;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -moz-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-align-self: stretch;
+            -ms-flex-item-align: stretch;
+            align-self: stretch;
+            margin-left: 0;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<div id="app"></div>
+</body>
+</html>
